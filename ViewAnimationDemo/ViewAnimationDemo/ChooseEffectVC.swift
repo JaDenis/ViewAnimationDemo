@@ -8,36 +8,29 @@
 
 import UIKit
 
-class ChooseEffectVC: UIViewController {
-
-	override func viewDidLoad() {
+class ChooseEffectVC: UIViewController
+{
+	// MARK: - VIEW LIFE CYCLE
+	
+	override func viewDidLoad()
+	{
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
-	override func didReceiveMemoryWarning() {
+	override func didReceiveMemoryWarning()
+	{
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
-	// need for dismiss the modal view EffectVC
-	@IBAction func close(segue:UIStoryboardSegue) {
- 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-		
+	
+	// MARK - SEGUE
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+	{
         let viewController:EffectVC = segue.destinationViewController as! EffectVC
-		
-		// set the effect chosen for EffectVC
-		if (segue.identifier == "showEffect1") {
-			viewController.effect = 1
-		} else if (segue.identifier == "showEffect2") {
-			viewController.effect = 2
-        } else if (segue.identifier == "showEffect3") {
-            viewController.effect = 3
-        } else if (segue.identifier == "showEffect4") {
-            viewController.effect = 4
-        }
+		viewController.effect = segue.identifier!
 	}
 
 }

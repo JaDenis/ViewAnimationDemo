@@ -76,6 +76,7 @@ Now in the **viewDidAppear** you can show your view with:
 
 ### 4. Spring + slide up
 ![ScreenShot](/Readme resources/spring_slide_up.gif)
+
 Finally a great example for show how you can easily combine two animations using the function:
 	
     CGAffineTransformConcat(transform1, transform2)
